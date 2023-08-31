@@ -1,4 +1,4 @@
-package com.ordermng.core.user;
+package com.drevo.ordermng.core.user;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;

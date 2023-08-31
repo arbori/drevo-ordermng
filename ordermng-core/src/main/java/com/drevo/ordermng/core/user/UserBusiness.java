@@ -1,12 +1,12 @@
-package com.ordermng.core.user;
+package com.drevo.ordermng.core.user;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
-import com.ordermng.core.EmailConfirmationException;
-import com.ordermng.core.UserExistsException;
+import com.drevo.ordermng.core.EmailConfirmationException;
+import com.drevo.ordermng.core.UserExistsException;
 
 public abstract class UserBusiness {
     private static final int NAME_MIN_SIZE = 8;

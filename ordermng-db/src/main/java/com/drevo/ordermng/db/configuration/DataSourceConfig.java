@@ -1,4 +1,4 @@
-package com.ordermng.db.configuration;
+package com.drevo.ordermng.db.configuration;
 
 import javax.sql.DataSource;
 

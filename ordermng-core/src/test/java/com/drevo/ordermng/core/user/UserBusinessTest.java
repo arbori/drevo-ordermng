@@ -1,4 +1,4 @@
-package com.ordermng.core.user;
+package com.drevo.ordermng.core.user;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -8,8 +8,8 @@ import java.util.Optional;
 
 import org.junit.Test;
 
-import com.ordermng.core.EmailConfirmationException;
-import com.ordermng.core.UserExistsException;
+import com.drevo.ordermng.core.EmailConfirmationException;
+import com.drevo.ordermng.core.UserExistsException;
 
 public class UserBusinessTest {
     private UserBusiness userBusiness = new UserBusinessImpl();

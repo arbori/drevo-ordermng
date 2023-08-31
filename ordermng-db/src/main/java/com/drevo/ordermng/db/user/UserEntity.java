@@ -1,4 +1,4 @@
-package com.ordermng.db.user;
+package com.drevo.ordermng.db.user;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

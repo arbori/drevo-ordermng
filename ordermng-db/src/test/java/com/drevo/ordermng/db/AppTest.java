@@ -1,4 +1,4 @@
-package com.ordermng.db;
+package com.drevo.ordermng.db;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
