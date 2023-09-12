@@ -1,4 +1,4 @@
-package com.drevo.ordermng.db.user;
+package com.drevo.ordermng.user;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -23,7 +23,7 @@ public class UserEntity {
     private String name;
 
 	@Column(name = "user_fullname", length = 40)
-    private String fullname;
+    private String fullName;
 
 	@Column(name = "user_email", length = 32)
 	private String email;

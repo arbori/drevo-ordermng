@@ -1,4 +1,4 @@
-package com.drevo.ordermng.core.user;
+package com.drevo.ordermng.user;
 
 import java.time.LocalDateTime;
 
@@ -17,6 +17,15 @@ public class UserDTO {
         this.emailConfirmed = false;
         this.askedConfimationSinse = null;
         this.active = true;
+    }
+
+    UserDTO(String name, String fullName, String email, Boolean emailConfirmed, LocalDateTime askedConfimationSinse, Boolean active) {
+        this.name = name;
+        this.fullName = fullName;
+        this.email = email;
+        this.emailConfirmed = emailConfirmed;
+        this.askedConfimationSinse = askedConfimationSinse;
+        this.active = active;
     }
 
     public UserDTO(UserDTO user) {
@@ -46,7 +55,7 @@ public class UserDTO {
         this.email = email;
     }
 
-    public Boolean getEmailConfirmed() {
+    public Boolean isEmailConfirmed() {
         return emailConfirmed;
     }
     void setEmailConfirmed(Boolean emailConfirmed) {
@@ -60,7 +69,7 @@ public class UserDTO {
         this.askedConfimationSinse = askedConfimationSinse;
     }
 
-    public Boolean getActive() {
+    public Boolean isActive() {
         return active;
     }
     void setActive(Boolean active) {

@@ -1,4 +1,4 @@
-package com.drevo.ordermng.core;
+package com.drevo.ordermng.exception;
 
 public class UserExistsException extends Exception {
     public UserExistsException() {

@@ -1,4 +1,4 @@
-package com.drevo.ordermng.core.user;
+package com.drevo.ordermng.user;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -8,11 +8,11 @@ import java.util.Optional;
 
 import org.junit.Test;
 
-import com.drevo.ordermng.core.EmailConfirmationException;
-import com.drevo.ordermng.core.UserExistsException;
+import com.drevo.ordermng.exception.EmailConfirmationException;
+import com.drevo.ordermng.exception.UserExistsException;
 
 public class UserBusinessTest {
-    private UserBusiness userBusiness = new UserBusinessImpl();
+    private UserBusiness userBusiness = new UserBusinessTestImpl();
 
     public UserBusinessTest() {
         try {
@@ -25,7 +25,7 @@ public class UserBusinessTest {
 
     @Test
     public void isValidTest() {
-        assertTrue("A all null attributes user is not valid",
+        assertTrue("User with attributes all null is not valid.",
             !userBusiness.isValid(new UserDTO(null, null, null)));
 
         // Test user name
@@ -61,7 +61,7 @@ public class UserBusinessTest {
         
         Optional<UserDTO> tarOpt = userBusiness.changeUserInformation(src);
 
-        assertTrue(String.format("A user with name %s does not exist, but a user was retrieved.", src.getName()), !tarOpt.isPresent());
+        assertTrue(String.format("A user with name %s does not exist, but the user was retrieved.", src.getName()), !tarOpt.isPresent());
     }
 
     @Test
@@ -105,6 +105,6 @@ public class UserBusinessTest {
 
         assertTrue(String.format("The user %s has not been retrieved.", name), userOptional.isPresent());
         assertEquals("The users' emails are different.", email, userOptional.get().getEmail());
-        assertTrue("The user has not been your email confirmed.", userOptional.get().getEmailConfirmed());
+        assertTrue("The user has not been your email confirmed.", userOptional.get().isEmailConfirmed());
     }
 }

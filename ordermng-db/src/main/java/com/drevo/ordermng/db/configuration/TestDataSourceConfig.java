@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 @Configuration
-@Profile("production")
+@Profile("test")
 @ConfigurationProperties(prefix = "spring.datasource")
-public class DataSourceConfig {
+public class TestDataSourceConfig {
     private String url;
     private String username;
     private String password;

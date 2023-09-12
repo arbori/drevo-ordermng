@@ -1,11 +1,11 @@
-package com.drevo.ordermng.core.user;
+package com.drevo.ordermng.user;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class UserBusinessImpl extends UserBusiness {
+public class UserBusinessTestImpl extends UserBusiness {
     Map<String, UserDTO> userMap  = new HashMap<String, UserDTO>();
 
     @Override
@@ -20,8 +20,8 @@ public class UserBusinessImpl extends UserBusiness {
         if(persist != null) {
             persist.setEmail(user.getEmail());
             persist.setFullName(user.getFullName());
-            persist.setEmailConfirmed(user.getEmailConfirmed());
-            persist.setActive(user.getActive());
+            persist.setEmailConfirmed(user.isEmailConfirmed());
+            persist.setActive(user.isActive());
         }
         else {
             persist = new UserDTO(user);

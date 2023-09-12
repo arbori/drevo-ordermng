@@ -1,12 +1,12 @@
-package com.drevo.ordermng.core.user;
+package com.drevo.ordermng.user;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
-import com.drevo.ordermng.core.EmailConfirmationException;
-import com.drevo.ordermng.core.UserExistsException;
+import com.drevo.ordermng.exception.EmailConfirmationException;
+import com.drevo.ordermng.exception.UserExistsException;
 
 public abstract class UserBusiness {
     private static final int NAME_MIN_SIZE = 8;
@@ -31,8 +31,8 @@ public abstract class UserBusiness {
             user.getName() != null && !user.getName().isEmpty() && user.getName().length() >= NAME_MIN_SIZE  && user.getName().length() <= NAME_MAX_SIZE &&
             user.getFullName() != null && !user.getFullName().isEmpty() && user.getFullName().length() >= FULLNAME_MIN_SIZE  && user.getFullName().length() <= FULLNAME_MAX_SIZE &&
             user.getEmail() != null && !user.getEmail().isEmpty() &&
-            user.getEmailConfirmed() != null &&
-            user.getActive() != null;
+            user.isEmailConfirmed() != null &&
+            user.isActive() != null;
     
          
         return valid && emailPattern.matcher(user.getEmail()).matches();
@@ -115,8 +115,4 @@ public abstract class UserBusiness {
     public abstract Optional<UserDTO> retrieve(String name);
 
     public abstract Optional<UserDTO> remove(String name);
-
-    public static boolean isEmailPatternValid(String email, String pattern) {
-        return Pattern.compile(pattern).matcher(email).matches();
-    }
 }

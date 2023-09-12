@@ -1,4 +1,4 @@
-package com.drevo.ordermng.db.user;
+package com.drevo.ordermng.user;
 
 import java.util.Optional;
 
